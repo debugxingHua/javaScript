@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-Document的forms</title>
+</head>
+<body>
+<form name="Form1"></form>
+<form name="second"></form>
+<form name="Form3"></form>
+
+<form id="Form1" name="Form_number_one">
+    您的姓名：<input type="text" />
+</form>
+<form id="Form2" name="Form_number_two">
+    您的汽车：<input type="text" />
+</form>
+</body>
+<script type="text/javascript">
+    <!--可返回文档中所有forms对象的引用-->
+    console.log(document.forms);
+    document.write('This document contains:'+document.forms.length + " forms.<br/>");
+    document.write('the name of the second is ：'+document.forms[1].name + "<br/>");
+
+</script>
+</html>

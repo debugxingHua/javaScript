@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript的Document.all</title>
+</head>
+<body>
+    <p class="p1" id="p1">p1</p>
+    <a name="a1">a标签</a><br />
+    <a name="a2">a标签</a><br />
+    <p>p2</p><br />
+    <br />
+</body>
+<!--返回文档中所有HTML元素的引用-->
+<!--all[] 已经被 Document 接口的标准的 getElementById() 方法和 getElementsByTagName() 方法以及 Document 对象的
+ getElementsByName() 方法所取代。尽管如此，这个 all[] 数组在已有的代码中仍然使用。-->
+<script type="text/javascript">
+    console.log(document.all);
+    console.log(document.all['a1']);//根据name获取标签
+    console.log(document.all['p1']);//根据id获取标签
+    console.log(document.getElementById('p1'));//根据id获取标签
+    console.log(document.getElementsByClassName('p1'));//根据id获取标签
+    console.log(document.getElementsByName('a1'));//根据name获取标签
+    console.log(document.getElementsByTagName('a'));//根据标签名name获取标签
+</script>
+</html>

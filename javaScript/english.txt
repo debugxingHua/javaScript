@@ -1,0 +1,9 @@
+applet:小应用程序、小型程序
+anchors:锚点
+contains:包含、容纳  ep：this document contains 3 anchors;
+second:第二
+replace:取代、替换
+collection:采集、聚集、收藏品、
+core:核心、要点
+node：节点
+

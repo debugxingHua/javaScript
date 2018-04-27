@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript的Document.anchors</title>
+    <!--anchors：锚点、下锚、转折点-->
+</head>
+<body>
+    <a name="first">First anchor</a><br />
+    <a name="second">Second anchor</a><br />
+    <a name="third">Third anchor</a><br />
+    <br />
+    Number of anchors in this document:
+</body>
+<!--返回本文中的所有锚点-->
+<script type="text/javascript">
+    var anchors = document.anchors;
+    alert('类型为：'+typeof anchors);
+    document.write(anchors.length);
+    document.write('<br/>第一个锚点是：'+anchors[0].innerText);
+    console.log(anchors[0]);
+</script>
+</html>

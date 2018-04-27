@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Document对象属性</title>
+</head>
+<body>
+    <input type="button" value="Write to a new document" onclick="document_open()">
+    <input type="button" value="getValue" onclick="getValue()">
+    <input type="button" name="name" value="getValueByName" onclick="getValueByName()">
+    <input type="button" name="name" value="getValueByTagName" onclick="getValueByTagName()">
+    <input type="button" name="name" value="document_write" onclick="document_write()">
+    <p class="p1">p1</p>
+    <p id="p2">p2</p>
+
+</body>
+<script type="text/javascript" >
+    //属性
+    //提供对body元素的直接访问
+    console.log(document.body);
+    //cookie 属性可设置或查询与当前文档相关的所有 cookie。
+    document.write(document.cookie);
+    console.log(document.cookie);
+    //域名
+    console.log(document.domain);
+    //返回文档被最后修改的日期和时间
+    console.log(document.lastModified);
+    //返回载入当前文档的文档的 URL。
+    console.log(document.referrer);
+    //返回当前文档的标题。
+    console.log(document.title);
+    //返回当前文档的 URL。
+    console.log(document.URL);
+
+    //方法
+    //打开一个流，以收集来自任何 document.write() 或 document.writeln() 方法的输出。
+    // document.open(mimetype,replace)
+    function document_open() {
+        var newTxt = document.open("text","replace");
+        var text = "open了一个新的文档并把它write了下来";
+        newTxt.write(text);
+        newTxt.close();
+    }
+    function document_write() {
+        var newWindow = window.open('','new window','width=300,height=300');
+        newWindow.document.open("text","replace");
+        var txt1 = "This is a new window.";
+        var txt2 = "This is a test.";
+        newWindow.document.writeln(txt1,txt2);
+        newWindow.document.close();
+    }
+    
+    //通过id获取元素
+    function getValue() {
+        var x=document.getElementById("p2");
+        alert(x.innerText);
+        console.log(x.innerText);
+    }
+    //通过name获取元素
+    function getValueByName() {
+        var x=document.getElementsByName("name");
+        console.log(x);
+    }
+    //通过TagName获取元素
+    function getValueByTagName() {
+        var x=document.getElementsByTagName("p");
+        console.log(x);
+    }
+</script>
+</html>
