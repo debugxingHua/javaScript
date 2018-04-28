@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Element对象3</title>
+</head>
+<body>
+请阅读 <a href="" target="_blank">Attr 对象</a>，
+
+<p id="demo">获取a标签的 target 属性值。</p>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+    function myFunction(){
+//        var a=document.getElementsByTagName("a")[0];
+//        document.getElementById("demo").innerHTML=a.getAttribute("target");
+
+        var a=document.getElementsByTagName("a")[0];
+        var x=document.getElementById("demo");
+//        x.innerHTML=a.getAttributeNode("target").value;
+        console.log(a.getUserData());
+    }
+</script>
+</body>
+</html>

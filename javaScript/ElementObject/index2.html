@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Element对象2</title>
+</head>
+<body>
+    <div>
+        <ul id="ul"><li>Coffee</li><li>Tea</li></ul>
+        <ul id="ul2"><li>Water</li><li>Milk</li></ul>
+        <p id="p3">克隆元素</p>
+        <button type="button" onclick="cloneElement()">cloneElement</button>
+        <p>比较两个元素的文档位置</p>
+        <p id="p1">This is a paragraph</p>
+        <p id="p2">This is another paragraph</p>
+        <button onclick="myFunction()">compareDocumentPosition</button>
+        <p>设置或返回元素的内容是否可编辑。</p>
+        <button type="button" onclick="setcontentEditable()">setcontentEditable</button>
+    </div>
+    <div>
+        <p id="myP" contenteditable="true">请尝试改变此文本。</p>
+        <button onclick="myFunction1(this);">禁用 p 元素文本编辑！</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction1(button) {
+                var x = document.getElementById("myP");
+                if (x.contentEditable == "true") {
+                    x.contentEditable = "false";
+                    button.innerHTML = "启用 p 元素文本编辑！";
+                } else {
+                    x.contentEditable = "true";
+                    button.innerHTML = "禁用 p 元素文本编辑！";
+                }
+            }
+        </script>
+    </div>
+<script type="text/javascript">
+    //克隆元素
+    function cloneElement() {
+        var itm=document.getElementById("ul").lastChild;
+        var cln=itm.cloneNode(true);
+        document.getElementById("ul2").appendChild(cln);
+    }
+    //比较两个元素的位置，这有啥用？
+    function myFunction() {
+        var p1=document.getElementById("p1").lastChild;
+        var p2=document.getElementById("p2").lastChild;
+        var p3=document.getElementById("p3").lastChild;
+        var a =p1.compareDocumentPosition(p2);
+        var b =p1.compareDocumentPosition(p3);
+        console.log(a);
+        console.log(b);
+        //1：这两个节点不属于同一个文档。
+        //2:p1位于p2之后。
+        //4:p1位于p2之前。
+        //8:p1位于p2内。
+        //16:p2位于p1内。
+        //32：两个节点没有关系，或者它们是同一元素上的两个属性。
+        //返回值可以是值的组合。例如，返回 20 意味着在 p2 在 p1 内部（16），并且 p1 在 p2 之前（4）。
+    }
+    //设置属性,这个屌
+    function setcontentEditable () {
+        document.getElementById("p1").contentEditable = true;
+        console.log(document.getElementById("p1").contentEditable);
+    }
+</script>
+</body>
+</html>

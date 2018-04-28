@@ -6,4 +6,8 @@ replace:取代、替换
 collection:采集、聚集、收藏品、
 core:核心、要点
 node：节点
+lastModified:上次修改日期
+element:元素
+bionic:仿生学的
+beaver：海狸
 

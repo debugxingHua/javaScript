@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Element对象</title>
+</head>
+<body onload="accessKey()">
+    <div>
+        <p id="p">这是一个屁元素</p>
+        <input id="input" type="text" value="" />
+        <button type ="button" name="button" id="btn1" onclick="button1()">button</button>
+        <ul class="ul" id="ul">
+            <li>number one</li>
+            <li >number two</li>
+        </ul>
+        <ul class="ul" id="ul2">
+            <li>number one1</li>
+            <li>number two2</li>
+        </ul>
+        <p>appendChild</p>
+        <button type="button" onclick="appendChild_ul()">添加最后一个子节点</button>
+        <button type="button" onclick="appendChild_move()">从一个元素向另一个元素中移动元素</button>
+        <p>attribute</p>
+        <button type="button" onclick="getAttributes()">attribute</button>
+        <p>getChildNodes</p>
+        <button type="button" onclick="getChildNodes()">getChildNodes</button>
+        <p>className</p>
+        <button type="button" onclick="SetGetClassName()">className</button>
+        <p>getClientHeightAndWidth</p>
+        <button type="button" onclick="getClientHeightAndWidth()">getClientHeightAndWidth</button>
+    </div>
+<script type="text/javascript">
+    var ul=document.getElementById("ul");
+    var ul2=document.getElementById("ul2");
+    console.log(NodeList);
+    function button1() {
+        alert('hi');
+    }
+    //accessKey 属性设置或返回元素的快捷键。
+    function accessKey() {
+        document.getElementById('input').accessKey='w';
+        document.getElementById('btn1').accessKey='q';
+    }
+    //操作左后一个子节点
+    //1、向元素添加新的子节点，作为最后一个子节点。
+    function appendChild_ul() {
+        var node = document.createElement("LI");//必须大写
+        var textnode = document.createTextNode("Number three");
+        node.appendChild(textnode);
+        document.getElementById("ul").appendChild(node);//只能byId
+    }
+    //2、从一个元素向另一个元素中移动元素。
+    function appendChild_move() {
+        var node=document.getElementById("ul").lastChild;
+        document.getElementById("ul2").appendChild(node);
+    }
+    //返回元素属性的 节点的属性集合NamedNodeMap.
+    function getAttributes() {
+        //获得元素属性的集合
+        var x = document.getElementsByTagName("BUTTON")[0].attributes;
+        console.log(x);
+    }
+    //返回元素子节点的 NodeList。
+    function getChildNodes() {
+//        console.log(document.body.childNodes);
+        console.log(ul.childNodes);
+    }
+    //className 属性设置或返回元素的 class 属性。
+    function SetGetClassName() {
+        console.log(ul.className);
+        ul.className = 'ul_new';
+        console.log(ul.className);
+    }
+    //返回可见高度与宽度
+    function getClientHeightAndWidth() {
+        console.log(ul.clientHeight + " and " + ul.clientWidth);
+    }
+</script>
+</body>
+</html>
