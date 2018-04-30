@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-Attribute对象</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="OK">
+        <button onclick="remove()">移除input</button>
+        <button onclick="setInputType()">移除input后再添加</button>
+        <p id="demo">点击</p>
+        <button class="btnclass" id="btn" onclick="myFunction()">试一下</button>
+        <!--isId 属性返回 true，如果属性是 ID 类型，返回返回 false。-->
+        <script>
+            function myFunction(){
+                var btn=document.getElementsByTagName("button")[0];
+                console.log("btn:"+btn);
+                console.log("元素属性节点的无序集合:"+btn.attributes);
+                console.log("length:"+btn.attributes.length);
+                console.log("第一个name:"+btn.attributes[0].name);
+                console.log("第一个value:"+btn.attributes[0].value);
+                console.log("第二个value:"+btn.attributes[1].name);
+                console.log("第二个value:"+btn.attributes[1].value);
+
+                //specified 属性返回 true，如果已规定某个属性. 如果已创建该属性但尚未添加到元素中，也会返回 true。否则返回 false。
+                var specified_result = btn.getAttributeNode("class").specified;
+                console.log(specified_result);
+
+                //getNamedItem() 方法从 namedNodeMap 中返回具有指定名称的属性节点。
+                var node_result = btn.attributes.getNamedItem('onclick').textContent;
+                console.log("getNamedItem:"+node_result);
+
+                //getNamedItem() 方法从 namedNodeMap 中返回具有指定名称的属性节点。
+                var node_result3 = btn.attributes.getNamedItem('onclick').textContent;
+                console.log("getNamedItem:"+node_result3);
+
+                //item() 方法以 Node 对象返回 namedNodeMap 中位于指定索引的节点。
+                var nodeName_result2 = btn.attributes.item(0).nodeName;
+                console.log("getNamedItem:"+nodeName_result2);
+            }
+            function remove() {
+                //removeNamedItem() 方法删除 namedNodeMap 中带有指定名称的节点。
+                var input = document.getElementsByTagName("INPUT")[0];
+                input.attributes.removeNamedItem("type");
+            }
+            function setInputType() {
+                //setNamedItem() 方法向 nodeMap 添加指定的节点。如果此节点已存在，则将替换该节点，并返回被替换的节点，否则返回值是 null。
+                var input = document.getElementsByTagName("INPUT")[0];
+                var typ = document.createAttribute("type");
+                typ.nodeValue = "button";
+                input.attributes.setNamedItem(typ);
+            }
+        </script>
+    </div>
+
+    <div></div>
+</body>
+</html>

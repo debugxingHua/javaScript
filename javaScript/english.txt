@@ -10,4 +10,6 @@ lastModified:上次修改日期
 element:元素
 bionic:仿生学的
 beaver：海狸
+eventEmitter:事件触发器
+
 
