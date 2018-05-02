@@ -11,5 +11,10 @@ element:元素
 bionic:仿生学的
 beaver：海狸
 eventEmitter:事件触发器
+chat:聊天、闲谈、与。。。搭讪、
+constructor:构造函数
+prototype:原型、标准
+concat:合并多个数组或字符串
+splice:切片、切开、
 
 
