@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-date对象2</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    //setDate() 方法用于设置一个月的某一天。
+    var d = new Date();
+    d.setDate(10);
+    d.setMonth(10);
+    d.setFullYear(2010);
+    d.setHours(10);
+    d.setMinutes(10);
+    d.setSeconds(10);
+    d.setMilliseconds(10);
+    document.write(d);
+
+    //世界钟同理：UTC
+</script>
+<script type="text/javascript">
+    var d = new Date();
+    d.setTime(-77771564221);
+    document.write("<br/>"+d);
+</script>
+<script type="text/javascript">
+    var d = new Date();
+    //把 Date 对象转换为字符串
+    document.write ("<br/>"+d.toString());
+    //把 Date 对象的时间部分转换为字符串。
+    document.write ("<br/>"+d.toTimeString());
+    //把 Date 对象的日期部分转换为字符串。
+    document.write ("<br/>"+d.toDateString());
+    //根据本地时间格式，把 Date 对象转换为字符串。
+    document.write ("<br/>"+d.toLocaleString());
+    //根据本地时间格式，把 Date 对象的时间部分转换为字符串。
+    document.write ("<br/>"+d.toLocaleTimeString());
+    //根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+    document.write ("<br/>"+d.toLocaleDateString());
+    //根据世界时，把 Date 对象转换为字符串。
+    document.write ("<br/>"+d.toUTCString());
+</script>
+<script type="text/javascript">
+    var minutes = 1000 * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    //UTC() 方法可根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。
+    var t = Date.UTC(2005,7,8);
+    var y = t/years;
+    document.write("<br/>It's been: " + y + " years from 1970/01/01");
+    document.write(" to 2005/07/08!");
+</script>
+</html>

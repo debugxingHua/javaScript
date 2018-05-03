@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-布尔对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    //toSource() 方法返回表示对象源代码的字符串。特么不支持了
+    function employee(name,job,born){
+        this.name=name;
+        this.job=job;
+        this.born=born;
+    }
+    var bill=new employee("Bill Gates","Engineer",1985);
+    document.write(bill.toSource());
+</script>
+<script type="text/javascript">
+    var boo = new Boolean(123)
+    document.write(boo.toString())
+</script>
+<script type="text/javascript">
+    //valueOf() 方法可返回 Boolean 对象的原始值。
+    var boo = new Boolean(false)
+    var boo = 3;
+    document.write(boo.valueOf())
+
+</script>
+</html>
