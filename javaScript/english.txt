@@ -16,5 +16,11 @@ constructor:构造函数
 prototype:原型、标准
 concat:合并多个数组或字符串
 splice:切片、切开、
-
+Exponential: 指数的
+toPrecision:精度、精密的，精确的
+bold:大胆的，英勇的；黑体的；厚颜无耻的；险峻的、粗体
+blink： 眨眼；使…闪烁；瞬间；闪光
+fixed：确定的；固执的；<美口>处境...的；准备好的、
+italics: 斜体字，斜体
+strike: 打，打击；罢工；敲，敲击；抓；打动；穿透
 
