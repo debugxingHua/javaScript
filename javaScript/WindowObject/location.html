@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Window Location</title>
+</head>
+<body>
+    <input type="button" value="加载新文档" onclick="newDoc()">
+</body>
+<script>
+    document.write(location.href+"<br/>");
+    document.write(location.pathname+"<br/>");
+</script>
+<script>
+    function newDoc(){
+        window.location.assign("http://www.baidu.com");
+    }
+</script>
+</html>

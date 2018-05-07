@@ -23,4 +23,15 @@ blink： 眨眼；使…闪烁；瞬间；闪光
 fixed：确定的；固执的；<美口>处境...的；准备好的、
 italics: 斜体字，斜体
 strike: 打，打击；罢工；敲，敲击；抓；打动；穿透
+Navigator:导航器、航海家
+popup:弹出
+alert:警告、使警觉
+prompt:提示
+confirm:确认
+Asynchronous：异步的
+
+
+
+
+
 

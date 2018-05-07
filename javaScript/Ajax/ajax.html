@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+</head>
+<body>
+    <button type="button" onclick="loadXMLDoc()">ajax对象</button>
+    <button type="button" onclick="sendData()">ajax对象</button>
+    <div id="div"></div>
+</body>
+<script type="text/javascript">
+    var div = document.getElementById("div");
+    //创建XMLHttpRequest对象
+    function  createXhr() {
+        var xmlhttp;
+        if (window.XMLHttpRequest){
+            xmlhttp=new XMLHttpRequest();
+        }else{
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return xmlhttp;
+    }
+    //查看对象属性
+    function loadXMLDoc() {
+        var xhr = createXhr();
+        for(var name in xhr){
+            document.write(name+"<br/>");
+        }
+    }
+    //向服务器发送请求
+    function sendData(){
+        var xhr = createXhr();
+        //method：请求的类型；GET 或 POST
+        //url：文件在服务器上的位置
+        //async：true（异步）或 false（同步）
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState==4 && xhr.status==200){
+                document.getElementById("div").innerHTML=xhr.responseText;
+            }
+        };
+        //get请求
+//        xhr.open('GET','server.php?name=name&age=3',true);
+//        xhr.send();
+        //post请求
+//        xhr.open('POST','server.php',true);
+//        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//        xhr.send("name=name&age=3");
+
+        //当使用 async=true 时，请规定在响应处于 onreadystatechange 事件中的就绪状态时执行的函数
+//        xhr.open('POST','ajax.txt',true);
+//        xhr.send();
+        //当您使用 async=false 时，请不要编写 onreadystatechange 函数 - 把代码放到 send() 语句后面即可
+        xhr.open('POST','ajax.txt',false);
+        xhr.send();
+
+    }
+</script>
+</html>
