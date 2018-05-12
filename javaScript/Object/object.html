@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-对象</title>
+</head>
+<body>
+    <p></p>
+</body>
+    <script type="text/javascript">
+        //工厂模式，就是将new对象的细节封装到一个函数，返回一个对象
+        function  create(color,doors,mpg) {
+            var oCar = new Object;
+            oCar.color = color;
+            oCar.doors = doors;
+            oCar.mpg = mpg;
+            oCar.showColor = function() {
+                document.write(this.color);
+            };
+            return oCar;
+        }
+        var car = create("blue",4,25);
+        console.log(car);
+        car = null;
+        //创建构造函数就像创建工厂函数一样容易。
+        // 第一步选择类名，即构造函数的名字。根据惯例，这个名字的首字母大写，以使它与首字母通常是小写的变量名分开。
+        // 除了这点不同，构造函数看起来很像工厂函数。
+        function Car(sColor,iDoors,iMpg) {
+            this.color = sColor;
+            this.doors = iDoors;
+            this.mpg = iMpg;
+            this.showColor = function() {
+                document.write(this.color);
+            };
+        }
+        Car.prototype.drivers = new Array("AAA","BBB");
+
+        var oCar1 = new Car("red",4,23);
+        var oCar2 = new Car("blue",3,25);
+
+        oCar1.showColor();
+        document.write("<br />");
+        oCar2.showColor();
+        document.write("<br />");
+        document.write(oCar1.drivers);
+        document.write("<br />");
+        document.write(oCar2.drivers);
+        
+        function showColor() {
+            document.write(this.color);
+        }
+        Car.prototype.showColor = showColor;
+        document.write("<br />");
+        oCar1.showColor();
+        document.write("<br />");
+        oCar2.showColor();
+    </script>
+</html>

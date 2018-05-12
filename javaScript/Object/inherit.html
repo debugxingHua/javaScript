@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+    <p>对象冒充方式</p>
+</body>
+    <script>
+        function ClassA(sColor) {
+            this.color = sColor;
+            this.sayColor = function () {
+                document.write(this.color);
+            };
+        }
+        function ClassAA(name) {
+            this.name = name;
+            this.sayName = function () {
+                document.write(this.name);
+            };
+        }
+        function ClassB(sColor, sName) {
+//            this.newMethod = ClassA;
+//            this.newMethod(sColor);
+//            delete this.newMethod;
+
+            //第一个参数用作 this 的对象。其他参数都直接传递给函数自身。
+            ClassA.call(this,sColor);
+
+//            this.newMethod = ClassAA;
+//            this.newMethod(sName);
+//            delete this.newMethod;
+
+            //apply() 方法有两个参数，用作 this 的对象和要传递给函数的参数的数组。
+            ClassAA.apply(this,new Array(sName));
+
+//            this.name = sName;
+//            this.sayName = function () {
+//                alert(this.name);
+//            };
+        }
+        var objA = new ClassA("blue");
+        var objB = new ClassB("red", "John");
+        objA.sayColor();	//输出 "blue"
+        document.write("<br/>");
+        objB.sayColor();	//输出 "red"
+        document.write("<br/>");
+        objB.sayName();     //输出 "John"
+    </script>
+</html>
