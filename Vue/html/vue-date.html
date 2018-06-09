@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="../common/vue.js"></script>
+</head>
+<body>
+    <div class="date" id="date">
+        <!--<input type="text" v-model="status">-->
+        {{ date | formatDate(status)}}
+    </div>
+
+    <script>
+        //年月补0
+        let padDate = function (value) {
+            return value < 10 ? "0" + value : value;
+        };
+
+        let date = new Vue({
+            el:"#date",
+            data:{
+                date:new Date(),
+                status:0
+            },
+            filters:{
+                formatDate : function (value,status) {
+                    console.log(status);
+                    let  date=  new Date(value);
+                    let  year=  date.getFullYear() ;
+                    let  month=  padDate(date.getMonth()  +  1) ;
+                    let  day=  padDate(date.getDate());
+                    let  hours=  padDate(date.getHours());
+                    let  minutes  =  padDate(date.getMinutes());
+                    let  seconds  =  padDate(date.getSeconds());
+                    switch (status) {
+                        case 0 ://年月日时分秒
+                            return year + '/' + month + '/' + day + '' + hours + ':' + minutes + ':' + seconds;
+                        case 1 ://年月日
+                            return year + '-' + month + '-' + day;
+                        case 2 ://年月
+                            return year + '-' + month;
+                    }
+                }
+            },
+            mounted: function () {
+                let _this = this;
+                this.timer = setInterval(function () {
+                    _this.date = new Date();
+                },1000);
+            },
+            beforeDestroy:function () {
+                if(this.timer){
+                    clearInterval(this.timer);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

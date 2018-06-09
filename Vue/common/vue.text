@@ -1,0 +1,32 @@
+v-model         双向数据绑定
+el              dom元素，可使用$el访问
+生命周期：created、mounted、beforeDestroy、
+v-html          输出HTML
+{{}}            mustache语法
+v-pre           不解析mustache语法。直接输出
+v-if            v-else-if、v-else、
+key             决定唯一或是复用
+v-for：
+    index、in、数组更新（push、pop、shift、unshift、splice、sort、reverse）
+v-bind          动态更新DOM元素的属性     :
+v-on            绑定事件监听              @
+:style          样式
+ |              过滤器，可传入函数名，对值进行处理
+filters         定义拦截器
+computed        计算属性
+methods         方法
+v-cloak         结束编辑时从绑定的元素上移除、常常与css 的display:none使用
+v-once          元素之渲染一次
+v-show          是改变元素的css属性display,隐藏或者显示
+
+内置方法
+    Vue.set(数组，下标，新内容);
+    this.$set(数组，下标，新内容);
+
+
+修饰符
+.lazy           使用.lazy会将input转变为在change事件中同步
+.number         将输入转换为Number类型
+.trim           自动过滤首尾空格
+
+
