@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" >
+	<title>加密器</title>
+	<style type="text/css">
+		.texta {
+			height: 200px;
+			width: 70%;
+			margin-top: 1px;
+			font-size: 20px;
+		}
+		.dd{
+			border: 1px solid;
+			margin-left: 10%;
+			margin-top: 5%;
+			width: 80%;
+			text-align: center;
+		}
+		.d1 {
+			margin: 30px auto;
+			text-align: center;
+
+		}
+		.d2 {
+			margin-left: 30px;
+		}
+		.d3 {
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="des.js"></script>
+	<script type="text/javascript" src="addPwd.js"></script>
+</head>
+	<body>
+		<div class="dd">
+			<h3>密码自动加密器</h3>
+			<div class="d">
+				<div class="d2">
+					<textarea id="text1" class="texta" placeholder="输入密码后点击加密按钮"></textarea>
+				</div>
+				<div class="d1">
+					<span>输入秘钥:</span>
+					<input type="text" name="keyv" id="keyv" value="123">
+					<button id="butn">加密</button>
+				</div>
+				<div class="d2">
+					<textarea id="text2" class="texta" placeholder="密文在这。。。"></textarea>
+				</div>
+				<div class="d3">
+					<p>将密码输入文本输入框后，点击加密按钮，在下方即可生成密文。</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
