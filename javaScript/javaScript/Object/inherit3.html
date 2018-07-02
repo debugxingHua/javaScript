@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+    <p>混合模式</p>
+</body>
+    <script>
+        function ClassA(sColor) {
+            this.color = sColor;
+        }
+        ClassA.prototype.sayColor = function () {
+            alert(this.color);
+        };
+        function ClassB(sColor, sName) {
+            ClassA.call(this, sColor);
+            this.name = sName;
+        }
+        ClassB.prototype = new ClassA();
+
+        ClassB.prototype.sayName = function () {
+            alert(this.name);
+        };
+        var objA = new ClassA("blue");
+        var objB = new ClassB("red", "John");
+        objA.sayColor();
+        objB.sayColor();
+        objB.sayName();
+    </script>
+</html>

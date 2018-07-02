@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-Document的images及links</title>
+</head>
+<body>
+<img border="0" src="" width="48" height="48">
+<br />
+<img border="0" src="" width="107" height="98">
+<br />
+
+<map name="planetmap">
+    <area id="venus" shape="circle"
+          coords="124,58,8"
+          alt="Venus"
+          href="" />
+</map>
+</body>
+<!--返回文档中图片和链接-->
+<script type="text/javascript">
+    document.write('图片数量：'+document.images.length);
+    console.log(document.images);
+    document.write('<br />links数量：'+document.links.length);
+    console.log(document.links);
+</script>
+</html>

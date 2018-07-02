@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-Array对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    var arr = new Array();
+    var arr1 = new Array(10);
+    var arr2 = new Array('1','str');
+    console.log(arr);
+    console.log(arr1);
+    console.log(arr2);
+    //constructor 返回她的构造函数
+    var test=new Array();
+    if (test.constructor == Array){
+        document.write("This is an Array");
+    }else{
+        document.write("This is not a Array");
+    }
+    //返回数组长度
+    console.log(arr2.length);
+    arr2.length = 5;
+    console.log(arr2);
+</script>
+<script type="text/javascript">
+    function employee(name,job,born){
+        this.name=name;
+        this.job=job;
+        this.born=born;
+    }
+    var bill=new employee("Bill Gates","Engineer",1985);
+    employee.prototype.salary=123;
+//    bill.salary=20000;
+    document.write(bill.salary);
+</script>
+</html>

@@ -1,0 +1,53 @@
+AJAX    异步更新
+Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
+AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
+AJAX 是一种用于创建快速动态网页的技术。
+
+XMLHttpRequest 是 AJAX 的基础。
+    XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新
+    创建 XMLHttpRequest 对象的语法：var xhr=new XMLHttpRequest();
+
+GET 请求
+    xmlhttp.open("GET","服务器端文件",true);
+    xmlhttp.send();
+
+    xmlhttp.open("GET","服务器端文件?name=Bill&age=2",true);
+    xmlhttp.send();
+
+POST 请求
+    xmlhttp.open("POST","服务器端文件",true);
+    xmlhttp.send();
+
+    xmlhttp.open("POST","服务器端文件",true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send("name=Bill&age=2");
+
+
+AJAX - 服务器响应
+    如需获得来自服务器的响应，请使用 XMLHttpRequest 对象的 responseText 或 responseXML 属性。
+    responseText	获得字符串形式的响应数据。
+    responseXML	    获得 XML 形式的响应数据。需要作为 XML 对象进行解析
+
+onreadystatechange 事件
+    当请求被发送到服务器时，我们需要执行一些基于响应的任务。
+    每当 readyState 改变时，就会触发 onreadystatechange 事件。
+    readyState 属性存有 XMLHttpRequest 的状态信息。
+
+    下面是 XMLHttpRequest 对象的三个重要的属性：
+    属性	                描述
+    onreadystatechange	    存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。
+    readyState	            存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+        0: 请求未初始化
+        1: 服务器连接已建立
+        2: 请求已接收
+        3: 请求处理中
+        4: 请求已完成，且响应已就绪
+    status
+        200: "OK"
+        404: 未找到页面
+
+使用 Callback 函数
+callback 函数是一种以参数形式传递给另一个函数的函数。
+如果您的网站上存在多个 AJAX 任务，那么您应该为创建 XMLHttpRequest 对象编写一个标准的函数，并为每个 AJAX 任务调用该函数。
+
+

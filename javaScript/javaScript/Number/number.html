@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Number对象</title>
+</head>
+<body>
+    <p>Number()函数将把自己的参数转换成一个原始的数值，并且返回这个值（如果转换失败，则返回 NaN）。</p>
+</body>
+<script type="text/javascript">
+    var n = 123;
+    var nd = 1234.123456;
+    //最大的数,最小的数
+    document.write(Number.MAX_VALUE + "<br/>");
+    document.write(Number.MIN_VALUE + "<br/>");
+    //非数字值
+    document.write(Number.NaN + "<br/>");
+    //负无穷大，溢出时返回该值
+    document.write(Number.NEGATIVE_INFINITY + "<br/>");
+    //正无穷大，溢出时返回该值
+    document.write(n.toString() + "<br/>");
+    document.write(n.toLocaleString() + "<br/>");
+    //把数字转换为字符串，结果的小数点后有指定位数的数字。
+    document.write(nd.toFixed() + "<br/>");
+    document.write(nd.toFixed(1) + "<br/>");
+    document.write(nd.toFixed(3) + "<br/>");
+    //toExponential() 方法可把对象的值转换成指数计数法。
+    document.write(nd.toExponential() + "<br/>");
+    document.write(nd.toExponential(1) + "<br/>");
+    document.write(nd.toExponential(2) + "<br/>");
+    //toPrecision() 方法可在对象的值超出指定位数时将其转换为指数计数法。
+    document.write(nd.toPrecision(2) + "<br/>");
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-Math对象</title>
+</head>
+<body>
+    <p>蛋疼的数学。。。就搞几个常用的吧</p>
+</body>
+<script type="text/javascript">
+    document.write("PI: " + Math.PI + "<br />");
+</script>
+<script type="text/javascript">
+    //ceil() 方法可对一个数进行上舍入。
+    document.write(Math.ceil(0.60) + "<br />");
+    document.write(Math.ceil(0.40) + "<br />");
+    document.write(Math.ceil(5) + "<br />");
+    document.write(Math.ceil(5.1) + "<br />");
+    document.write(Math.ceil(-5.1) + "<br />");
+    document.write(Math.ceil(-5.9) + "<br />");
+
+    //floor() 方法可对一个数进行下舍入。
+    document.write(Math.floor(0.60) + "<br />");
+    document.write(Math.floor(0.40) + "<br />");
+    document.write(Math.floor(5) + "<br />");
+    document.write(Math.floor(5.1) + "<br />");
+    document.write(Math.floor(-5.1) + "<br />");
+    document.write(Math.floor(-5.9) + "<br />");
+
+    //四舍五入
+    document.write(Math.round(0.60) + "<br />");
+    document.write(Math.round(0.50) + "<br />");
+    document.write(Math.round(0.49) + "<br />");
+    document.write(Math.round(-4.40) + "<br />");
+    document.write(Math.round(-4.60) + "<br />");
+
+    //random() 方法可返回介于 0 ~ 1 之间的一个随机数。
+    document.write(Math.random().toString() + "<br />");
+    document.write(parseInt(Math.random() * 10).toString()) ;
+
+</script>
+</html>

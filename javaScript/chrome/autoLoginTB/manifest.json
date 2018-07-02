@@ -1,0 +1,39 @@
+﻿{
+  "manifest_version": 2,
+  "version": "1.0.1",
+  "name": "淘宝自动登录助手",
+  "description": "淘宝自动登录助手",
+  "browser_action": {
+    "default_icon":"1.png",
+    "default_popup":"helloWord.html"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://login.taobao.com/*"
+      ],
+      "js": [
+        "jquery-1.11.1.min.js",
+        "des.js",
+        "taobao_login.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    },{
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "alipay_close.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}

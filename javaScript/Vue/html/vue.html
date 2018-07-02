@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+</div>
+<div id="app2">
+    <span v-bind:title="message2">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+</div>
+<div id="app-3">
+    <p v-if="seen">现在你看到我了</p>
+</div>
+<div id="app-4">
+    <ol>
+        <li v-for="item in todos">
+            {{ item.text }}
+        </li>
+    </ol>
+</div>
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message" />
+</div>
+<!--组件使用-->
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
+
+<div class="end" style="width: 100%;height: 100px;"></div>
+<script src="../common/vue.js"></script>
+<script>
+    console.log(new Vue());
+    //简单的数据绑定
+    let app = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world!'
+        }
+    });
+    //指令绑定特性v-系列
+    let app2 = new Vue({
+        el:"#app2",
+        data:{
+            message2:"页面加载于：" + new Date().toLocaleString()
+        }
+    });
+    //控制切换一个元素是否显示:v-if=""
+    let app3 = new Vue({
+        el: '#app-3',
+        data: {
+            seen: true
+        }
+    });
+    //遍历v-for="item in xxx"
+    let app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    });
+    //监听
+    let app5 = new Vue({
+        el:"#app-5",
+        data:{
+            message:"反转消息"
+        },
+        methods:{
+            reverseMessage:function () {
+                this.message = this.message.split('').reverse().join("");
+            }
+        }
+    });
+    //表单输入和应用状态之间的双向绑定:v-model=""
+    let app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'Hello Vue!'
+        }
+    });
+    //组件的定义
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+    let app7 = new Vue({
+        el: '#app-7',
+        data: {
+            groceryList: [
+                { id: 0, text: '蔬菜' },
+                { id: 1, text: '奶酪' },
+                { id: 2, text: '随便其它什么人吃的东西' }
+            ]
+        }
+    });
+</script>
+</body>
+</html>

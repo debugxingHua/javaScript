@@ -1,0 +1,37 @@
+applet:小应用程序、小型程序
+anchors:锚点
+contains:包含、容纳  ep：this document contains 3 anchors;
+second:第二
+replace:取代、替换
+collection:采集、聚集、收藏品、
+core:核心、要点
+node：节点
+lastModified:上次修改日期
+element:元素
+bionic:仿生学的
+beaver：海狸
+eventEmitter:事件触发器
+chat:聊天、闲谈、与。。。搭讪、
+constructor:构造函数
+prototype:原型、标准
+concat:合并多个数组或字符串
+splice:切片、切开、
+Exponential: 指数的
+toPrecision:精度、精密的，精确的
+bold:大胆的，英勇的；黑体的；厚颜无耻的；险峻的、粗体
+blink： 眨眼；使…闪烁；瞬间；闪光
+fixed：确定的；固执的；<美口>处境...的；准备好的、
+italics: 斜体字，斜体
+strike: 打，打击；罢工；敲，敲击；抓；打动；穿透
+Navigator:导航器、航海家
+popup:弹出
+alert:警告、使警觉
+prompt:提示
+confirm:确认
+Asynchronous：异步的
+
+
+
+
+
+

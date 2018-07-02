@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+    <div id="if1">
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
+        <button id="btn" v-on:click="qh">切换</button>
+    </div>
+
+
+    <!--End-->
+    <div class="end" id="end" v-bind:style="styleObject"></div>
+<script src="../common/vue.js"></script>
+<script>
+    //计算属性computed
+    let vm = new Vue({
+        el: '#example',
+        data: {
+            message: 'Hello'
+        },
+        //computed计算属性与methods的区别就是computed在message没有发生改变前，返回的是以前的缓存结果，赞
+        computed: {
+            // 计算属性的 getter
+            reversedMessage: function () {
+                // `this` 指向 vm 实例
+                return this.message.split('').reverse().join('')
+            }
+        }
+    });
+    //if
+    let if1 = new Vue({
+        el:"#if1",
+        data:{
+            loginType : 'username'
+        },
+        methods:{
+            qh : function () {
+                if(this.loginType === "username"){
+                    console.log(this.loginType);
+                    this.loginType = "email";
+                }else{
+                    this
+                        .loginType = "username";
+                }
+            }
+        }
+    });
+
+    let  end = new Vue({
+        el: '#end',
+        data: {
+            styleObject: {
+                height: '100px',
+                width : '100%',
+                background: 'red'
+            }
+        }
+    });
+</script>
+</body>
+</html>

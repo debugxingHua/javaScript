@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javaScript学习-Array对象</title>
+</head>
+<body>
+    <p>对象方法</p>
+</body>
+<script type="text/javascript">
+    //concat() 方法用于连接两个或多个数组。连接两个或更多的数组，并返回结果
+    var a = [1,2,3];
+    var b = [7,8];
+    document.write(a.concat(4,5,b));
+    //数组转字符串:把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+    document.write("<br/>"+a.join('.'));
+    //pop() 方法用于删除并返回数组的最后一个元素。
+    document.write("<br/>"+a.pop());
+    document.write("<br/>"+a);
+    //删除并返回数组的第一个元素
+    document.write("<br/>"+a.shift());
+    document.write("<br/>"+a);
+    //push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+    document.write("<br/>"+a.push(b,'James2'));
+    document.write("<br/>"+a);
+    //要想数组的开头添加一个或多个元素，请使用 unshift() 方法。
+    document.write("<br/>"+a.unshift("James"));
+    document.write("<br/>"+a);
+
+    //reverse() 方法用于颠倒数组中元素的顺序。
+    document.write("<br/>"+a.reverse());
+    //sort() 方法用于对数组的元素进行排序。
+    document.write("<br/>"+a.sort());
+    document.write("<br/>"+a.sort(function sortNumber(a,b){return a - b}));
+
+    //slice() 方法可从已有的数组中返回选定的元素。该方法并不会修改数组，而是返回一个子数组。
+    //splice() 如果想删除数组中的一段元素，应该使用方法 Array.splice()。
+    document.write("<br/>splice:"+a.slice(1));
+    document.write("<br/>"+a);
+    document.write("<br/>splice2:"+a.splice(1,2));
+    document.write("<br/>"+a);
+
+    //toString() 方法可把数组转换为字符串，并返回结果。返回值与没有参数的 join() 方法返回的字符串相同
+    document.write("<br/>"+a.toString());
+    //把数组转换为本地字符串。
+    document.write("<br/>"+a.toLocaleString());
+
+    //valueOf() 方法返回 Array 对象的原始值。通常由 JavaScript 在后台自动调用，并不显式地出现在代码中
+    document.write("<br/>"+a.valueOf());
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 计时</title>
+    <script type="text/javascript">
+        function timedMsg()
+        {
+            var t=setTimeout("alert('5 seconds!')",5000);
+            console.log(t);
+        }
+    </script>
+    <script type="text/javascript">
+        var c=0
+        var t
+        function timedCount()
+        {
+            document.getElementById('txt').value=c;
+            c=c+1;
+            t=setTimeout("timedCount()",1000);
+            if(c == 3){
+                clearTimeout(t);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="Display timed alertbox!" onClick="timedMsg()">
+    </form>
+    <form>
+        <input type="button" value="Start count!" onClick="timedCount()">
+        <input type="text" id="txt">
+    </form>
+</body>
+</html>

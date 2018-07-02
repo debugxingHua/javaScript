@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-String对象</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    var txt="Hello World!";
+    document.write(txt.length);
+    //anchor() 方法用于创建 HTML 锚。
+    document.write(txt.anchor("myanchor"));
+
+    //big() 方法用于把字符串显示为大号字体。
+    document.write("<br/>"+txt.big());
+    //使用小字号来显示字符串。
+    document.write("<p>Small: " + txt.small() + "</p>");
+    //使用粗体显示字符串。
+    document.write("<p>Bold: " + txt.bold() + "</p>");
+    //italics() 方法用于把字符串显示为斜体。
+    document.write("<p>Italic: " + txt.italics() + "</p>");
+    //显示闪动字符串。
+    document.write("<p>Blink: " + txt.blink() + " (does not work in IE)</p>");
+    //以打字机文本显示字符串。
+    document.write("<p>Fixed: " + txt.fixed() + "</p>");
+    //使用删除线来显示字符串。
+    document.write("<p>Strike: " + txt.strike() + "</p>");
+    //使用指定的颜色来显示字符串。
+    document.write("<p>Fontcolor: " + txt.fontcolor("Red") + "</p>");
+    //使用指定的尺寸来显示字符串。
+    document.write("<p>Fontsize: " + txt.fontsize(16) + "</p>");
+    //sub() 方法用于把字符串显示为下标
+    document.write("<p>Sub: " + txt.sub() + "</p>");
+    //sup() 方法用于把字符串显示为上标。
+    document.write("<p>Sup: " + txt.sup() + "</p>");
+    //link() 方法用于把字符串显示为超链接。
+    document.write("<p>Link: " + txt.link("http://www.baidu.com") + "</p>");
+
+    //把字符串转换为小写。
+    document.write("<p>localeLowercase: " + txt.toLocaleLowerCase() + "</p>");
+    document.write("<p>Lowercase: " + txt.toLowerCase() + "</p>");
+    //把字符串转换为大写。
+    document.write("<p>localeUppercase: " + txt.toLocaleUpperCase() + "</p>");
+    document.write("<p>Uppercase: " + txt.toUpperCase() + "</p>");
+
+    //charAt() 方法可返回指定位置的字符。
+    document.write("<p>charAt: " + txt.charAt(6) + "</p>");
+    //charCodeAt() 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。
+    document.write("<p>charCodeAt: " + txt.charCodeAt(6) + "</p>");
+    //fromCharCode() 可接受一个指定的 Unicode 值，然后返回一个字符串。
+    document.write("<p>fromCharCode: " + String.fromCharCode(65,97,66,98,67,99) + "</p>");
+
+    //concat() 方法用于连接两个或多个字符串。
+    document.write("<p>concat: " + txt.concat("+123","456") + "</p>");
+
+    //substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。
+    document.write("<p>substr: " + txt.substr(3,5) + "</p>");
+    //substring() 方法用于提取字符串中介于两个指定下标之间的字符。
+    document.write("<p>substring: " + txt.substring(3,5) + "</p>");
+
+    //indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+    console.log(txt.indexOf("o"));
+    console.log(txt.indexOf("o",5));
+    //lastIndexOf() 方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。
+    console.log(txt.lastIndexOf("o"));
+    console.log(txt.lastIndexOf("o",6));
+    //search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+//    document.write("<p>search: " + str.search("u") + "</p>");
+    console.log(txt.search("o"));
+
+    //match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+    //该方法类似 indexOf() 和 lastIndexOf()，但是它返回指定的值，而不是字符串的位置。
+    document.write(txt.match("world") + "<br />");
+    document.write(txt.match("World") + "<br />");
+    document.write(txt.match("worlld") + "<br />");
+    document.write(txt.match("world!"));
+    var str="1 plus 2 eqUal 3";
+    document.write(str.match(/\d+/g));
+    //用本地特定的顺序来比较两个字符串。(0,+,-)
+    document.write("<p>localeCompare: " + txt.localeCompare("123") + "</p>");
+
+    //replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+    document.write(str.replace(/plus/, "p"));
+    document.write("<br/>"+str.replace(/(\d+)/, "n"));
+    document.write("<br/>"+str.replace(/(\d+)/g, "n"));
+    document.write("<br/>"+str.replace(/u/i, "n"));
+    //转换字符串首字母大写
+    document.write("<br/>"+
+        str.replace(/\b\w+\b/g, function(word){
+            return word.substring(0,1).toUpperCase()+word.substring(1);
+        }
+    ));
+
+    //slice() 方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+    var str2="Hello happy world!";
+    document.write("<p>"+str2.slice(6)+"</p>");
+    document.write("<p>"+str2.slice(6,12)+"</p>");
+    //split() 方法用于把一个字符串分割成字符串数组。
+    document.write(str2.split(" ") + "<br />");
+    document.write(str2.split("") + "<br />");
+    document.write(str2.split(" ",3));
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+    <p>原型链方式</p>
+</body>
+    <script>
+        //prototype 对象的任何属性和方法都被传递给那个类的所有实例。原型链利用这种功能来实现继承机制
+        function ClassA() {
+        }
+
+        ClassA.prototype.color = "red";
+        ClassA.prototype.sayColor = function () {
+            alert(this.color);
+        };
+
+        function ClassB() {
+        }
+
+        ClassB.prototype = new ClassA();
+
+        ClassB.prototype.name = "";
+        ClassB.prototype.sayName = function () {
+            alert(this.name);
+        };
+
+        var objA = new ClassA();
+        var objB = new ClassB();
+        objA.color = "blue";
+        objB.color = "red";
+        objB.name = "John";
+        objA.sayColor();
+        objB.sayColor();
+        objB.sayName();
+
+        console.log(objB instanceof ClassA);
+        console.log(objB instanceof ClassB);
+
+    </script>
+</html>

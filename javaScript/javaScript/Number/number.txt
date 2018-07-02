@@ -1,0 +1,38 @@
+Number 对象
+Number 对象是原始数值的包装对象。
+JavaScript 只有一种数字类型。
+所有 JavaScript 数字均为 64 位
+JavaScript 不是类型语言。与许多其他编程语言不同，JavaScript 不定义不同类型的数字，比如整数、短、长、浮点等等。
+JavaScript 中的所有数字都存储为根为 10 的 64 位（8 比特），浮点数。
+整数（不使用小数点或指数计数法）最多为 15 位。
+如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0 和 "x"，则解释为十六进制数。
+
+
+创建 Number 对象的语法：
+var myNum=new Number(value);
+var myNum=Number(value);
+
+参数
+参数 value 是要创建的 Number 对象的数值，或是要转换成数字的值。
+
+返回值
+当 Number() 和运算符 new 一起作为构造函数使用时，它返回一个新创建的 Number 对象。如果不用 new 运算符，把 Number() 作为一个函数来调用，它将把自己的参数转换成一个原始的数值，并且返回这个值（如果转换失败，则返回 NaN）。
+
+Number 对象属性
+属性	            描述
+constructor	        返回对创建此对象的 Number 函数的引用。
+MAX_VALUE	        可表示的最大的数。
+MIN_VALUE	        可表示的最小的数。
+NaN	                非数字值。
+NEGATIVE_INFINITY	负无穷大，溢出时返回该值。
+POSITIVE_INFINITY	正无穷大，溢出时返回该值。
+prototype	        使您有能力向对象添加属性和方法。
+
+Number 对象方法
+方法	描述
+toString	        把数字转换为字符串，使用指定的基数。
+toLocaleString	    把数字转换为字符串，使用本地数字格式顺序。
+toFixed	            把数字转换为字符串，结果的小数点后有指定位数的数字。
+toExponential	    把对象的值转换为指数计数法。
+toPrecision	        把数字格式化为指定的长度。
+valueOf	            返回一个 Number 对象的基本数字值。

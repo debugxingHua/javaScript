@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学习-window对象</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button onclick="open_w()">open</button>
+    <button onclick="close_w()">close</button>
+    <button onclick="move_w()">move</button>
+    <button onclick="resize_w()">resize</button>
+    <script>
+//        var w=window.innerWidth;
+//        var w=document.documentElement.clientWidth;
+//        var w=document.body.clientWidth;
+        var w=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        x=document.getElementById("demo");
+        x.innerHTML="浏览器的内部窗口宽度：" + w + "，高度：" + h + "。"
+//        console.log(document.documentElement);
+    </script>
+    <script>
+        function open_w() {
+            window.open("hai");
+        }
+        function close_w() {
+            window.close();
+        }
+        function move_w() {
+            window.moveTo(100,100);
+        }
+        function resize_w() {
+            window.resizeTo(100,100);
+        }
+    </script>
+</body>
+</html>

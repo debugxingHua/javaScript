@@ -1,0 +1,19 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<p>If you click on me, I will disappear.</p>
+<script type="text/javascript" src="../jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    //document加载完后绑定事件
+    $(document).ready(function(){
+        $("p").click(function(){
+            $(this).hide();
+        });
+    });
+</script>
+</body>
+
+</html>
