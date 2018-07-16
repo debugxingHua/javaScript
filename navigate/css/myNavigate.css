@@ -58,7 +58,7 @@ a:hover{
     width: 70%;
     height: 200px;
     margin: auto;
-    background: url("img/bg.png");
+    background: url("../img/bg.png");
     background-size: cover;
 }
 .top_logo,.top_date,.top_weather {
